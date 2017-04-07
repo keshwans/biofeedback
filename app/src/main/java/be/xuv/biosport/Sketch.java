@@ -1,66 +1,37 @@
 package be.xuv.biosport;
 
-import android.content.Context;
-import android.support.annotation.NonNull;
-import android.Manifest;
-
-import com.intel.heartratecore.api.HeartRateCore;
-import com.intel.heartratecore.api.HeartRateCoreListener;
 import com.intel.heartratecore.api.HeartRateCoreStatus;
-
-
-/**
- * Created by juliendeswaef on 3/20/17.
- */
-
 import java.util.EnumSet;
 
 import processing.core.PApplet;
 
 public class Sketch extends PApplet {
-    public Context context;
-    public HeartRateCore hrc;
-    public HrListener listener;
-    public int hr;
-    public Boolean hasPermission;
+    private int heartRate;
+    private EnumSet<HeartRateCoreStatus> status;
 
     public void settings() {
-        size(600, 600);
+        size(1100, 2000);
     }
 
     public void setup() {
-        //fullScreen();
-        hasPermission = false;
-        textFont(createFont("Arial", 60));
+        textFont(createFont("Arial", 40));
     }
 
     public void draw() {
         background(0);
-        text("Heart rate: " + hr, 10, 60);
+        text("Heart Rate: " + heartRate, 10, 60);
+        text("Status: " + status, 300, 60);
+
     }
 
-    class HrListener implements HeartRateCoreListener {
-        @Override
-        public void onStatusChanged(@NonNull EnumSet<HeartRateCoreStatus> enumSet) {
-            print("onStatusChanged::" + enumSet.toString());
-        }
-        @Override
-        public void onHeartRateChanged(int i) {
-            print("Heart rate changed: " + i);
-            print("Done HR change");
-        }
+    public void setHeartRate( int i ) {
+        heartRate = i;
+        print("Heart rate: " + i);
     }
 
-    public void onPermissionsGranted() {
-        print("REC AUDIO: " + String.valueOf(checkPermission(Manifest.permission.RECORD_AUDIO)));
-        if ( checkPermission(Manifest.permission.RECORD_AUDIO) ) {
-            Context context = surface.getContext();
-            listener = new HrListener();
-            hrc = HeartRateCore.getInstance(context, listener);
-            hrc.start();
-            hasPermission = true;
-        } else {
-            hasPermission = false;
-        }
+    public void setHeartRateCoreStatus( EnumSet<HeartRateCoreStatus> s ) {
+        status = s;
+        print("Status: " + s);
     }
 }
+
