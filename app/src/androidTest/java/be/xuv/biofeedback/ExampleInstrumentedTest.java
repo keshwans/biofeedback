@@ -1,4 +1,4 @@
-package be.xuv.biosport;
+package be.xuv.biofeedback;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

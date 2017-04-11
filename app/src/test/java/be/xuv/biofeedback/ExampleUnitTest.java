@@ -1,4 +1,4 @@
-package be.xuv.biosport;
+package be.xuv.biofeedback;
 
 import org.junit.Test;
 

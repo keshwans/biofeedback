@@ -3,9 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/biosport.iml" filepath="$PROJECT_DIR$/biosport.iml" />
+      <module fileurl="file://$PROJECT_DIR$/biofeedback.iml" filepath="$PROJECT_DIR$/biofeedback.iml" />
       <module fileurl="file://$PROJECT_DIR$/core-sdk-lib-release/core-sdk-lib-release.iml" filepath="$PROJECT_DIR$/core-sdk-lib-release/core-sdk-lib-release.iml" />
-      <module fileurl="file://$PROJECT_DIR$/core-sdk-lib-release-hr/core-sdk-lib-release-hr.iml" filepath="$PROJECT_DIR$/core-sdk-lib-release-hr/core-sdk-lib-release-hr.iml" />
     </modules>
   </component>
 </project>

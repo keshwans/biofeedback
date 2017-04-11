@@ -1,4 +1,4 @@
-package be.xuv.biosport;
+package be.xuv.biofeedback;
 
 import android.support.annotation.NonNull;
 

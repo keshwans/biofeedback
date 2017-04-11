@@ -1,4 +1,4 @@
-package be.xuv.biosport;
+package be.xuv.biofeedback;
 
 import android.util.Log;
 import android.os.AsyncTask;

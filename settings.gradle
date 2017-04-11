@@ -1,1 +1,1 @@
-include ':app', ':core-sdk-lib-release', ':core-sdk-lib-release-hr'
+include ':app', ':core-sdk-lib-release'
