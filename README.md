@@ -9,4 +9,4 @@ More info about the project: https://thoughtworksarts.io/bio/hannes-bend/
  + Will NOT work with arm-v8 chips
 
 ## Credits
- Special thanks to @jacksonkr and @matt-porter for sharing their code and Android knowledge.
+ Special thanks to [@jacksonkr](https://github.com/jacksonkr) and [@matt-porter](https://github.com/matt-porter) for sharing their code and Android knowledge.
