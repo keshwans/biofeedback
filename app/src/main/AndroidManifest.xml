@@ -12,8 +12,10 @@
         android:label="BioFeedback"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="be.xuv.biofeedback.MainActivity"
-            android:screenOrientation="portrait">
+        <activity
+            android:name="be.xuv.biofeedback.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullscreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
