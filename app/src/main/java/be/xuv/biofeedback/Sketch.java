@@ -16,34 +16,45 @@ public class Sketch extends PApplet {
     private float scale = MINSCALE;
     private int interval;
 
+    private static final int WIDTH = 2000;
+    private static final int HEIGHT = 1100;
+
+    private static final boolean DEBUG = true;
+
     public void settings() {
-        size(1100, 2000);
+        size(WIDTH, HEIGHT);
     }
 
     public void setup() {
+        colorMode(HSB, 360, 100, 100);
         textFont(createFont("Arial", 40));
     }
 
     public void draw() {
         background(0);
         fill(255);
-        text("Heart Rate: " + heartRate, 10, 60);
-        text("Status: " + status, 300, 60);
+
+        if (DEBUG) {
+            text("Heart Rate: " + heartRate, 10, 60);
+            text("Status: " + status, 300, 60);
+            text("FrameRate: " + (int)frameRate, 1000, 60);
+        }
+
+        float steps = (float)(frameRate * interval * .001);
+
         if (beat()) {
-            heartColor = color(255, 0, 0);
+            heartColor = color(0, 100, 50);
             scale = 20;
         } else {
-            heartColor = color( red(heartColor)-1 , green(heartColor)+1, blue(heartColor)+1 );
+            heartColor = color( 0 , saturation(heartColor) - 50/steps, brightness(heartColor) - 25/steps );
         }
 
         if (scale > MINSCALE) {
-            scale = scale - (MAXSCALE - MINSCALE)/frameRate;
+            scale = scale - (MAXSCALE - MINSCALE)/steps;
         }
 
-
-
         fill(heartColor);
-        drawHeart(550, 500, scale);
+        drawHeart(WIDTH/2, HEIGHT/8, scale);
     }
 
     public void setHeartRate( int i ) {
